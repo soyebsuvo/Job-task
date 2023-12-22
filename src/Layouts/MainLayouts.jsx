@@ -8,11 +8,11 @@ export default function MainLayouts() {
     return (
         <div className="max-w-7xl mx-auto">
             <div className={`${isLog ? 'hidden' : 'flex'}`}>
-            <Navbar></Navbar>
+                <Navbar></Navbar>
             </div>
             <Outlet></Outlet>
             <div className={`${isLog ? 'hidden' : 'flex'}`}>
-            <Footer></Footer>
+                <Footer></Footer>
             </div>
         </div>
     )

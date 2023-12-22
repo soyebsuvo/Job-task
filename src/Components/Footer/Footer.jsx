@@ -1,8 +1,8 @@
 import logo from '../../assets/Task.png'
 export default function Footer() {
     return (
-        <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content">
+        <div className='w-full'>
+            <footer className="footer p-10 bg-neutral text-neutral-content w-full">
                 <aside>
                     <img src={logo} className='w-40' alt="" />
                     <p>SCC Technovision Inc.<br />Transforming tasks into triumphs, one click at a time.</p>
