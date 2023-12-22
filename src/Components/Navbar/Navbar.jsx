@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from '../../assets/Task.png'
 import './navbar.css'
+import { useContext } from "react"
+import { AuthContext } from "../../Provider/AuthProvider"
 
 export default function Navbar() {
+    const { user , logout } = useContext(AuthContext);
+    const handleLogout = () => {
+        logout().then().catch()
+    }
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/rules">Rules</NavLink></li>
@@ -10,7 +16,7 @@ export default function Navbar() {
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
     </>
     return (
-        <div className="md:px-16 absolute max-w-7xl mx-auto w-full">
+        <div className={`md:px-16 absolute max-w-7xl mx-auto w-full`}>
             <nav className="w-full">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -32,7 +38,10 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <div className="navbar-end">
+                        {user ? <button onClick={handleLogout} className="text-white hover:shadow-lg hover:shadow-white duration-200 border px-4 py-1 border-white cursor-pointer">Logout</button> : 
                         <Link to="/login"><button className="text-white hover:shadow-lg hover:shadow-white duration-200 border px-4 py-1 border-white cursor-pointer">Login</button></Link>
+                        }
+                        
                     </div>
                 </div>
             </nav>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import banner from '../../assets/banner.jpg'
 export default function Banner() {
     return (
@@ -8,7 +9,7 @@ export default function Banner() {
                     <div className="md:px-16 md:pr-56">
                         <h1 className="mb-5 text-5xl font-bold">Task Mastery Awaits. <br className='hidden md:block'/> Start Today.</h1>
                         <p className="mb-5">Empower your workflow with our cutting-edge task management platform. Seamlessly organize, prioritize, and conquer your daily tasks. Experience efficiency like never before. Elevate your productivity journey today!</p>
-                        <button className="px-5 py-2 font-bold border border-white hover:shadow-lg hover:shadow-white duration-200">Let&apos;s Explore</button>
+                        <Link to="/dashboard"><button className="px-5 py-2 font-bold border border-white hover:shadow-lg hover:shadow-white duration-200">Let&apos;s Explore</button></Link>
                     </div>
                 </div>
             </div>
