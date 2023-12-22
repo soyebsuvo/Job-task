@@ -1,7 +1,7 @@
 import banner from '../../assets/banner.jpg'
 export default function Banner() {
     return (
-        <div>
+        <div className='z-20'>
             <div className="hero h-[500px]" style={{ backgroundImage: `url(${banner})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content">
