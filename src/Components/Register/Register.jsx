@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogins from "../SocialLogins/SocialLogins";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 export default function Register() {
+    const location = useLocation();
     const navigate = useNavigate();
     const { createUser } = useContext(AuthContext);
     const {
@@ -17,7 +18,7 @@ export default function Register() {
         createUser(data.email, data.password)
             .then(res => {
                 console.log(res.user);
-                navigate('/');
+                navigate(location.state ? location.state : '/');
             })
             .catch(err => {
                 console.log(err);

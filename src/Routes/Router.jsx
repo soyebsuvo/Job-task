@@ -3,13 +3,16 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Components/Register/Register";
-// import Dashboard from "../Pages/Dashboard/Dashboard";
-import Dboard from "../Pages/Dashboard/Dboard";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+// import Dboard from "../Pages/Dashboard/Dboard";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayouts></MainLayouts>,
+      errorElement : <ErrorPage></ErrorPage>,
       children : [
         {
             path : "/",
@@ -25,8 +28,8 @@ const router = createBrowserRouter([
         },
         {
             path : '/dashboard',
-            // element : <Dashboard></Dashboard>
-            element : <Dboard></Dboard>
+            element : <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+            // element : <Dboard></Dboard>
         }
       ]
     },

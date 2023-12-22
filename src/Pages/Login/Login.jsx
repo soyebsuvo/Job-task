@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogins from "../../Components/SocialLogins/SocialLogins";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 export default function Login() {
+    const location = useLocation();
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
     const {
@@ -17,7 +18,7 @@ export default function Login() {
         login(data.email, data.password)
             .then(result => {
                 console.log(result.user);
-                navigate('/');
+                navigate(location.state ? location.state : '/');
             })
             .catch(error => {
                 console.log(error)
